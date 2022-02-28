@@ -9,15 +9,9 @@ double pown(double value, uint16_t n) {
   }
   if (1 == n) {
     return value;
+  } else {
+      return value*pown(value,n-1);
   }
-  double result = 1;
-  if ( 0 != n && 1 != n ) {
-    while (n--) {
-      result *= value;
-    }
-    return result;
-  }
-  return 0;
 }
 
 uint64_t fact(uint16_t n) {
