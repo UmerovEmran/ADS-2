@@ -43,9 +43,7 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
   double sin = 0;
   for (int i = count; i > 0; i--) {
-    int p = 2*i-1;
-    int o = i-1;
-    sin += pown((-1), o)*(pown(x, p)/fact(p));
+    sin += pown((-1), i-1)*(pown(x, 2*i-1)/fact(2*i-1));
   }
   return sin;
 }
@@ -53,9 +51,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   double cos = 0;
   for (int i = count; i > 0; i--) {
-    int p = 2*i-2;
-    int o = i-1;
-    cos += pown((-1), o)*(pown(x, p)/fact(p));
+    cos += pown((-1), i-1)*(pown(x, 2*i-2)/fact(2*i-2));
   }
   return cos;
 }
