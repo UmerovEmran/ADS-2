@@ -10,16 +10,16 @@ double pown(double value, uint16_t n) {
   if (1 == n) {
     return value;
   } else {
-      return value*pown(value,n-1);
+      return value*pown(value, n-1);
   }
 }
 
 uint64_t fact(uint16_t n) {
-  int result = 1;
-  for (int i = 1; i <= n; i++) {
-    result *= i;
+  if (n <= 1) {
+    return 1;
+  } else {
+    return n*fact(n-1);
   }
-  return result;
 }
 
 double calcItem(double x, uint16_t n) {
